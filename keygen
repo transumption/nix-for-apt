@@ -1,0 +1,5 @@
+Key-Type: rsa
+Key-Usage: sign
+Name-Real: Thomas Koch
+Name-Email: thomas@koch.ro
+%no-protection

@@ -1,0 +1,34 @@
+image: debian:buster
+
+before_script:
+  - apt update
+
+variables:
+  DEBIAN_FRONTEND: noninteractive
+  GIT_SUBMODULE_STRATEGY: recursive
+  KEY_ID: incoming+transumption/nix-for-apt@incoming.gitlab.com
+
+artifacts.zip:
+  stage: build
+  script:
+  - apt install -y git-buildpackage
+  - apt build-dep -y ./nix
+  - (cd nix; gbp buildpackage --git-ignore-branch --no-sign)
+  - install -Dt artifacts nix.deb-export/*.deb
+  artifacts:
+    paths:
+    - artifacts
+
+pages:
+  stage: deploy
+  script:
+  - apt install -y aptly gnupg1
+  - echo -n $KEY | base64 -d | tee key.asc | gpg1 --import
+  - aptly repo create -distribution=v1 nix
+  - aptly repo add nix artifacts/*.deb
+  - aptly publish repo nix
+  - mv ~/.aptly/public public
+  - mv key.asc public
+  artifacts:
+    paths:
+    - public
