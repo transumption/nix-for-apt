@@ -13,7 +13,7 @@ Tested on Debian 10 and Ubuntu 18.10.
 ### CI
 
 If you want to set up your own instance of this CI, you will need to set
-`KEY` [protected variable][] to Base64-encoded secret GPG key.
+`APT_KEY` [protected variable][] to Base64-encoded secret GPG key.
 
 To generate a new key, run:
 
