@@ -26,6 +26,10 @@ To generate a new key, run:
 )
 ```
 
+If you plan to serve the repo to Debian users, I'd recommend to disable
+"Settings -> Pages -> Force HTTPS" GitLab option, otherwise it will require
+`apt-transport-https` package to be manually installed first.
+
 ## Thanks
 
 All of the packaging work has been done by Thomas Koch.
