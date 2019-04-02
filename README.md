@@ -9,7 +9,7 @@ sudo apt update
 sudo apt install nix
 ```
 
-Tested on Debian 10 and Ubuntu 18.10.
+See [Debian `README`][] for usage.
 
 ### CI
 
@@ -26,4 +26,9 @@ To generate a new key, run:
 )
 ```
 
+## Thanks
+
+All of the packaging work has been done by Thomas Koch.
+
+[Debian `README`]: https://salsa.debian.org/debian/nix/blob/master/debian/README.Debian
 [protected variable]: https://docs.gitlab.com/ee/ci/variables/#protected-variables
