@@ -22,12 +22,12 @@ pages:
   stage: deploy
   script:
   - apt install -y aptly gnupg1
-  - echo -n $APT_KEY | base64 -d | tee key.asc | gpg1 --import
+  - echo -n $APT_KEY | base64 -d | gpg1 --import
   - aptly repo create -distribution=v1 nix
   - aptly repo add nix artifacts/*.deb
   - aptly publish repo nix
   - mv ~/.aptly/public public
-  - mv key.asc public
+  - gpg1 --export --armor > public/key.asc
   artifacts:
     paths:
     - public
