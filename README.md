@@ -3,6 +3,9 @@
 ```sh
 wget -qO - https://transumption.gitlab.io/nix-for-apt/key.asc | sudo apt-key add -
 echo 'deb http://transumption.gitlab.io/nix-for-apt v1 main' | sudo tee /etc/apt/sources.list.d/nix.list
+
+sudo apt update
+sudo apt install nix
 ```
 
 Tested on Debian 10 and Ubuntu 18.10.
