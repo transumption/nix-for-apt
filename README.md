@@ -1,8 +1,9 @@
 ## Setup
 
 ```sh
-wget -qO - https://transumption.gitlab.io/nix-for-apt/key.asc | sudo apt-key add -
-echo 'deb [arch=amd64] http://transumption.gitlab.io/nix-for-apt v1 main' | sudo tee /etc/apt/sources.list.d/nix.list
+wget -O - https://transumption.gitlab.io/nix-for-apt/key.asc | sudo apt-key add -
+echo 'deb [arch=amd64] http://transumption.gitlab.io/nix-for-apt buster main' \
+  | sudo tee /etc/apt/sources.list.d/nix.list
 
 sudo apt update
 sudo apt install nix

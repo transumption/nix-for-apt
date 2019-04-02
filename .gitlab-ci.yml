@@ -23,7 +23,7 @@ pages:
   script:
   - apt install -y aptly gnupg1
   - echo -n $APT_KEY | base64 -d | gpg1 --import
-  - aptly repo create -distribution=v1 nix
+  - aptly repo create -distribution=buster nix
   - aptly repo add nix artifacts/*.deb
   - aptly publish repo nix
   - mv ~/.aptly/public public
