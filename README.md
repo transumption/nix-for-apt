@@ -9,7 +9,7 @@ sudo apt update
 sudo apt install nix
 ```
 
-See [Debian `README`][] for usage.
+See [`README.Debian`][] for usage.
 
 ### CI
 
@@ -34,5 +34,5 @@ If you plan to serve the repo to Debian users, I'd recommend to disable
 
 All of the packaging work has been done by Thomas Koch.
 
-[Debian `README`]: https://salsa.debian.org/debian/nix/blob/master/debian/README.Debian
+[`README.Debian`]: https://salsa.debian.org/debian/nix/blob/master/debian/README.Debian
 [protected variable]: https://docs.gitlab.com/ee/ci/variables/#protected-variables
